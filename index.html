@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @keyframes example{
+            0%{
+                margin-left: -100vw;
+            }
+            100% {
+                margin-left: 0vw;
+            }
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: none;
+        }
+        #fundo{
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("./assets/png/sky_azul.jpg");
+            background-size: 100% 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        #fundoNoite{
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height:100vh;
+            background-image: url("./assets/png/noite.jpg");
+            background-size: 100% 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        #fundoPrincipal{
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            height:100vh;
+            background-image: url("./assets/png/sky_azul.jpg");
+            background-size: 100% 100%;
+            z-index: 996;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        #fundo > div{
+            position: absolute;
+            filter: brightness(130%);
+        }
+        #fundo #camadaNuvem1{
+            display: flex;
+            top: 70vh;
+            background-image: url("./assets/png/nuvensInfinitas.png");
+            background-size: 50% 100%;
+            background-repeat: repeat-x;
+            width: 200vw;
+            height: 50vh;
+            margin-bottom: 0;
+            margin-top: auto;
+            z-index: 1000;
+            background-position: left;
+            animation: example 20s infinite linear;
+        }
+        #fundo #camadaNuvem2{
+            display: flex;
+            top: 60vh;
+            background-image: url("./assets/png/nuvensInfinitas.png");
+            background-size: 25% 80%;
+            background-repeat: repeat-x;
+            width: 200vw;
+            height: 50vh;
+            margin-bottom: 0;
+            margin-top: auto;
+            z-index: 999;
+            background-position: left;
+            animation: example 40s infinite linear;
+        }
+        #fundo #camadaNuvem3{
+            display: flex;
+            top: 55vh;
+            background-image: url("./assets/png/nuvensInfinitas.png");
+            background-size: 12.5% 40%;
+            background-repeat: repeat-x;
+            width: 200vw;
+            height: 50vh;
+            margin-bottom: 0;
+            margin-top: auto;
+            z-index: 998;
+            background-position: left;
+            animation: example 65s infinite linear;
+        }
+        #fundo #camadaNuvem4{
+            display: flex;
+            top: 53vh;
+            background-image: url("./assets/png/nuvensInfinitas.png");
+            background-size: 12.5% 40%;
+            background-repeat: repeat-x;
+            width: 200vw;
+            height: 50vh;
+            margin-bottom: 0;
+            margin-top: auto;
+            z-index: 998;
+            background-position: left;
+            animation: example 90s infinite linear;
+        }
+        #sol{
+            display: flex;
+            background-position: left;
+            position: absolute;
+            width: 30vw;
+            opacity: 1;
+            z-index:997 ;
+        }
+        #loginConteiner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100%;
+            background-color: #ffffff22;
+            z-index: 2000;
+        }
+        #login{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 30vw;
+            height: 40vw;
+            background-color:rgba(255, 255, 255, 0.5);
+            z-index: 2000;
+            border-radius: 10px;
+            box-shadow: 0px 1px 5px #33333333;
+            padding: 10px;
+            padding-top: 5%;
+        }
+        #login> div , #login> input{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 7%;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            font-family:calibri;
+            font-weight: 600;
+            color:#3c4955;
+            font-size: 14pt;
+            margin-top: 7px;
+            
+        }
+        #login> input{
+            border-radius: 5px;
+            border: 2px solid #3c4955;
+            margin-bottom: 30px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <section id="fundo">
+        <div id="fundoNoite">
+
+        </div>
+        <div id="fundoPrincipal" class="escuresiveis">
+
+        </div>
+        <img id="sol" src="./assets/png/sol.png" alt="">
+
+        <div id="camadaNuvem1" class="escuresiveis">
+
+        </div>
+        <div id="camadaNuvem2" class="escuresiveis">
+
+        </div>
+        <div id="camadaNuvem3" class="escuresiveis">
+
+        </div>
+        <div id="camadaNuvem4" class="escuresiveis">
+
+        </div>
+        <div id="loginConteiner">
+            <div id="login">
+                <div>LOGIN</div>
+                <input type="email">
+                <div>SENHA</div>
+                <input type="password">
+            </div>
+        </div>
+    </section>
+    <script>
+        var tela = document.querySelector("body")
+        var fundoPrincipal = document.querySelector("#fundoPrincipal")
+        var sol = document.querySelector("#sol")
+        var escuresiveis = document.querySelectorAll(".escuresiveis")
+        tela.onmousemove = (event)=>{
+            
+            w = sol.offsetWidth 
+            h = sol.offsetHeight
+            cx = event.clientX -w/2
+            cy = event.clientY -h/2
+            sol.style.marginLeft = `${cx}px`
+            sol.style.top = `${cy}px`
+            fh = tela.offsetHeight
+            fundoPrincipal.style.opacity = fh
+            luminosidade = (fh-cy)/fh +0.3
+            
+            fundoPrincipal.style.opacity = luminosidade 
+            escuresiveis.forEach((elemento)=>{
+                var index = parseInt( elemento.style.zIndex)
+                    camada =1
+                elemento.style.filter = `brightness(${luminosidade*100*camada}%)`
+
+            })
+
+        }
+    </script>
+ 
+</body>
+</html>

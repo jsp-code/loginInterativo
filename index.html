@@ -239,8 +239,27 @@
                 elemento.style.filter = `brightness(${luminosidade*100*camada}%)`
 
             })
-
         }
+        tela.ontouchmove = (event)=>{
+            
+            w = sol.offsetWidth 
+            h = sol.offsetHeight
+            cx = event.clientX -w/2
+            cy = event.clientY -h/2
+            sol.style.marginLeft = `${cx}px`
+            sol.style.top = `${cy}px`
+            fh = tela.offsetHeight
+            fundoPrincipal.style.opacity = fh
+            luminosidade = (fh-cy)/fh +0.3
+            
+            fundoPrincipal.style.opacity = luminosidade 
+            escuresiveis.forEach((elemento)=>{
+                var index = parseInt( elemento.style.zIndex)
+                    camada =1
+                elemento.style.filter = `brightness(${luminosidade*100*camada}%)`
+
+            })
+         }
     </script>
  
 </body>
